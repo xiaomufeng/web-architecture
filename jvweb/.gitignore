@@ -1,0 +1,6 @@
+_Store
+jvweb/.DS_Store
+jvweb/.ignore.swp
+jvweb/biz/target/
+jvweb/config/target/
+jvweb/web/target/
