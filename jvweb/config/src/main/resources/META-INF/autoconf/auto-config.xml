@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GBK"?>
+<config description="jvweb config">
+	
+	<script>
+		<generate template="config.properties.vm" destfile="config.properties" charset="GBK" />
+	</script>
+</config>

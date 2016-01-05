@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="gbk"/>
+    <title>��ӭ�����ҵİ���</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://img.china.alibaba.com/favicon.ico"/>
+</head>
+<body>
+	<div id="header"></div>
+    <div id="content" class="w952">
+      <div id="app-content">
+          <!--content-->
+          <div id="new-content">
+             <!-- your content here! -->
+			 $screen_placeholder
+          </div>
+          <!--end/content-->
+      </div>
+    </div>	
+    <!--end/screen-->
+    <div style="color:#fff;text-align:center;">
+    	$!{systemUtil.HostInfo.Name}<br/>Server is OK
+    </div> 
+</body>
+</html>

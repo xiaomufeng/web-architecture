@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config description="jvweb bundle.war">
+	
+	<group name="jvweb.config">
+		<property name="jvweb.env" defaultValue="test" description="应用启动的环境" />
+        <property name="jvweb.templates" defaultValue="/home/admin/jvweb/target/jvweb.war/WEB-INF/templates" description="应用模板文件的路径" />
+        <property name="jvweb.loggingRoot" defaultValue="/home/admin/output/jvweb/logs" description="日志打印的目录" />
+        <property name="jvweb.loggingLevel" defaultValue="error" description="应用的日志级别" />
+	</group>
+    
+	<script>
+		<generate template="web.xml.vm" destfile="WEB-INF/web.xml" charset="GBK" />
+		<generate template="log4j.xml.vm" destfile="WEB-INF/log4j.xml" charset="GBK" />
+		<generate template="resources.xml.vm" destfile="WEB-INF/common/resources.xml" charset="GBK" />
+		<generate template="webx.xml.vm" destfile="WEB-INF/webx.xml" charset="UTF-8" />
+	</script>
+</config>

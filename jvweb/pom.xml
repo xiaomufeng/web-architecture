@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<groupId>com.jv.web.app</groupId>
+	<artifactId>jvweb.all</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>jvweb.all</name>
+	<description>jvweb.all projects</description>
+	
+	<properties>
+		<maven.test.skip>true</maven.test.skip>
+		<java_source_version>1.6</java_source_version>
+		<java_target_version>1.6</java_target_version>
+		<file_encoding>GBK</file_encoding>
+		<springext_version>1.0</springext_version>
+		<webx3-version>3.0.6</webx3-version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			
+		    <dependency>
+				<groupId>com.google.code.gson</groupId>
+				<artifactId>gson</artifactId>
+				<version>2.2.4</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<excludes>
+					<exclude>**/.svn/</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+				<excludes>
+					<exclude>**/.svn/</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
+	</build>
+  <modules>
+    <module>config</module>
+    <module>biz</module>
+    <module>web</module>
+    <module>bundle/war</module>
+    <module>deploy</module>
+  </modules>
+</project>

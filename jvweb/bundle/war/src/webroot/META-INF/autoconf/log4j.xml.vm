@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- 系统级别日志记录APPENDER -->
+    <appender name="PROJECT" class="com.alibaba.common.logging.spi.log4j.DailyRollingFileAppender">
+        <param name="file" value="${jvweb_loggingRoot}/sys/webx/webx.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="info"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%X{requestURIWithQueryString}] %-5p %c{2} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="WebxRootController" class="com.alibaba.common.logging.spi.log4j.DailyRollingFileAppender">
+        <param name="file" value="${jvweb_loggingRoot}/sys/webx/controller.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="GBK"/>
+        <param name="threshold" value="info"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%X{requestURIWithQueryString}] %-5p %c{2} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="SESSION" class="com.alibaba.common.logging.spi.log4j.DailyRollingFileAppender">
+        <param name="file" value="${jvweb_loggingRoot}/sys/webx/session.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="GBK"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%n%d %-5p %c{2} - [%X{loginUserNick}@%X{remoteAddr} - %X{method} %X{requestURIWithQueryString}] %nUserAgent: %X{userAgent}%nReferrer: %X{referrer} %n%m%n"/>
+        </layout>
+    </appender>
+    <appender name="FILTER" class="com.alibaba.common.logging.spi.log4j.DailyRollingFileAppender">
+        <param name="file" value="${jvweb_loggingRoot}/sys/webx/webx-filter.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="GBK"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %c{2} - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="VELOCITY" class="com.alibaba.common.logging.spi.log4j.DailyRollingFileAppender">
+        <param name="file" value="${jvweb_loggingRoot}/sys/velocity/velocity.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="GBK"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %c{2} - %m%n"/>
+        </layout>
+    </appender>
+	
+	<!--Logger定义-->
+	<!--系统级别Logger-->
+	<logger name="com.alibaba.citrus.webx.impl.WebxRootControllerImpl" additivity="false">
+        <level value="$jvweb_loggingLevel"/>
+        <appender-ref ref="WebxRootController"/>
+    </logger>
+	<logger name="com.alibaba.webx.session" additivity="false">
+        <level value="$jvweb_loggingLevel"/>
+        <appender-ref ref="SESSION"/>
+    </logger>
+    <logger name="com.alibaba.webx.filter" additivity="false">
+        <level value="$jvweb_loggingLevel"/>
+        <appender-ref ref="FILTER"/>
+    </logger>
+    <logger name="com.alibaba.service.VelocityService" additivity="false">
+     <level value="${jvweb_loggingLevel}"/>
+     <appender-ref ref="VELOCITY"/>
+    </logger>
+	
+    <root>
+        <level value="$jvweb_loggingLevel"/>
+        <appender-ref ref="PROJECT"/>
+    </root>
+</log4j:configuration>

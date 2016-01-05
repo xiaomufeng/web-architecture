@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.1">
+	<id>jvweb</id>
+	<includeBaseDirectory>false</includeBaseDirectory>  
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+	<fileSets>
+		<fileSet>
+			<directory>../bundle/war/target/jvweb.bundle.war-1.0-SNAPSHOT</directory><!-- war目录 -->
+			<outputDirectory>jvweb.war</outputDirectory> <!-- 输出文件名：应该和aone2里的应用名一致 -->
+			<includes>
+				<include>**/**</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>

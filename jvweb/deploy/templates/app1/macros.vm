@@ -1,0 +1,5 @@
+#macro (ValidationMessage $field)
+  #if ($field && !$field.isValid())
+    <li> $field.Message</li>
+  #end
+#end
